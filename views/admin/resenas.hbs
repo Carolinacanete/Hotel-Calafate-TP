@@ -1,0 +1,135 @@
+<div class="container" style="margin-top: 100px">
+    <div class="row">
+        <button type="button" class="btn btn-primary col-1" data-bs-toggle="modal" data-bs-target="#createModal">
+            Crear
+        </button>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Opinión</th>
+                    <th scope="col">Puntaje</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each resenas}}
+                <tr>
+                    <th scope="row">{{id}}</th>
+                    <td>{{nombre}}</td>
+                    <td>{{apellido}}</td>
+                    <td>{{opinion}}</td>
+                    <td>{{puntaje}}</td>
+                    <td>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#updateModal-{{id}}">
+                            Modificar
+                        </button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal-{{id}}">
+                            Eliminar
+                        </button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal Create -->
+<div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deleteModalLabel">Crear reseña</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form-resena-create" action="/admin/resenas/create" method="post">
+                    <div class="mb-3">
+                        <label for="resena-nombre" class="col-form-label">Nombre</label>
+                        <input type="text" class="form-control" id="resena-nombre" name="nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="resena-apellido" class="col-form-label">Apellido</label>
+                        <input type="text" class="form-control" id="resena-apellido" name="apellido">
+                    </div>
+                    <div class="mb-3">
+                        <label for="resena-opinion" class="col-form-label">Opinión</label>
+                        <textarea class="form-control" id="resena-opinion" name="opinion"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="resena-puntaje" class="col-form-label">Puntaje</label>
+                        <input type="number" class="form-control" id="resena-puntaje" name="puntaje">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#each resenas}}
+<!-- Modal Update -->
+<div class="modal fade" id="updateModal-{{id}}" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="updateModalLabel">Modificar reseña: {{id}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form-resena-update" action="/admin/resenas/update/{{id}}" method="post">
+                    <div class="mb-3">
+                        <label for="resena-nombre" class="col-form-label">Nombre</label>
+                        <input type="text" class="form-control" id="resena-nombre" name="nombre" value={{nombre}}>
+                    </div>
+                    <div class="mb-3">
+                        <label for="resena-apellido" class="col-form-label">Apellido</label>
+                        <input type="text" class="form-control" id="resena-apellido" name="apellido" value={{apellido}}>
+                    </div>
+                    <div class="mb-3">
+                        <label for="resena-opinion" class="col-form-label">Opinión</label>
+                        <textarea class="form-control" id="resena-opinion" name="opinion">{{opinion}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="resena-puntaje" class="col-form-label">Puntaje</label>
+                        <input type="number" class="form-control" id="resena-puntaje" name="puntaje" value={{puntaje}}>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-warning">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Delete -->
+<div class="modal fade" id="deleteModal-{{id}}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deleteModalLabel">Reseña: {{id}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Realmente quiere eliminar la reseña?</p>
+            </div>
+            <form action="/admin/resenas/delete/{{id}}" method="get">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{/each}}

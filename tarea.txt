@@ -1,0 +1,8 @@
+la seccion dinamica de mi sitio va a ser "reseñas de viajeros que se hospedaron en el hotel"
+la tabla en la base de datos tendria los siguientes campos:
+- id
+- nombre
+- apellido
+- fecha
+- opinion
+- puntaje

@@ -1,0 +1,96 @@
+/* index.html */
+
+#home {
+background-image:url("../images/hotel1.jpg");
+ background-size:cover;
+ height: 50vh;
+ min-height:700px;
+}
+.lista-habitaciones {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.lista-habitaciones li {
+    margin: 1px 0;
+}
+
+.lista-habitaciones li a img {
+    width: 120px;
+    height: 50px;
+    transition: all .2s ease-in-out;
+    margin-right: 1rem;
+    opacity: 1;
+}
+.lista-habitaciones li a:hover img {
+    filter: none;
+    margin-right: 1.4rem;
+    opacity: 1;
+}
+.fondo {
+    background-color: rgba(240, 232, 232, 0.5);
+}
+.testimonio {
+    padding: 30px;
+}
+/* index.html */
+/* generales */
+h1 {
+color: rgb(2, 29, 85);
+}
+footer {
+    background-color: cadetblue;
+}
+body {
+    font-family: 'Rubik', sans-serif;
+}
+/* generales */
+/* ubicacion */
+.mapa iframe {
+    width: 100%;
+    aspect-ratio: 1.2;
+}
+#ubicacion {
+    margin-top: 50px;
+background-image:url("../images/calafate.jpg");
+ background-size:cover;
+}
+/* ubicacion */
+/* nosotros */
+.nosotros {
+    background-image:url("../images/fuerte.jpg");
+    background-size:cover;
+    height: 50vh;
+ min-height:700px;
+}
+/* nosotros */
+/* contactanos */
+.contactanos {
+    height: 50vh;
+ min-height:700px;
+ 
+}
+#contactanos-titulo { 
+margin-top: 70px;
+}
+#container-contactanos {
+    background-image:url("../images/glaciar.jpg");
+    background-size:cover;
+}
+/* contactanos */
+footer p {
+    margin-bottom: 0px;
+}
+
+.fondo-gris {
+    background-color: rgb(139, 150, 172);
+    border-radius: 5%;
+}
+
+#form-login {
+    padding: 10px;
+}
+
+.mensaje-error {
+    color: darkred;
+}

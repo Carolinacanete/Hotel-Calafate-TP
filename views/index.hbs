@@ -1,0 +1,60 @@
+<div class="container-fluid">
+        <div id="home" class="row align-items-center hero">
+            <div class="col-md-3 offset-md-1">
+                <h1>Hotel Fuerte Calafate</h1>
+                <p>Bienvenidos al Hotel panoramico de Calafate
+                </p>
+            </div>
+            <div class="row my-3">
+                <div id="habitaciones" class="fondo col-md-3 offset-md-1 py-3">
+                    <h2>Habitaciones</h2>
+                    <ul class="lista-habitaciones">
+                        <li>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="ejemplo">
+                                <img src="images/doble.jpg" />
+                            </a>Doble
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/triple.jpg" />
+                            </a>Triple
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/matrimonial.jpg" />
+                            </a>Matrimonial
+                        </li>
+                    </ul>
+                </div>
+                <div id="carouselExampleIndicators" class="fondo col-md-3 offset-md-3 py-3 carousel slide"
+                    data-bs-ride="true">
+                    <h2>Testimonios</h2>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div id="carousel-testimonios" class="carousel-inner">
+                        {{#each resenas}}
+                        <div class="carousel-item testimonio">
+                            <p>{{opinion}}</p>
+                        </div>
+                        {{/each}}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+

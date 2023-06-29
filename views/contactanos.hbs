@@ -1,0 +1,26 @@
+<div id="container-contactanos" class="container-fluid">
+        <form class="row col-md-6 offset-md-3 contactanos" action="/contactanos" method="post">
+            <h1 id="contactanos-titulo">Contactanos</h1>
+            <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre">
+            </div>
+            <div class="col-md-6">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido">
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                    <input name="email" type="text" class="form-control" id="mail" placeholder="ejemplo@gmail.com" name="mail">
+            </div>
+            <div class="col-12">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" rows="3" name="mensaje"></textarea>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-dark">Enviar</button>
+                <p>{{mensaje}}</p>
+            </div>
+        </form>
+
+    </div>
